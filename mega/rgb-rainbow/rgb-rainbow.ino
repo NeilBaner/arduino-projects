@@ -107,5 +107,24 @@ void rainbow_one_led(int delayTime){
 }
 
 void loop(){
-    rainbow_one_led(10);
+    int ledColour[4];
+    for(int i = 0; i < 1536; i++){
+        ledColour[0] = i;
+        ledColour[1] = (i + 384) < 1536 ? i + 384 : i + 384 - 1536;
+        ledColour[2] = (i + 768) < 1536 ? i + 768 : i + 768 - 1536;
+        ledColour[3] = (i + 1152) < 1536 ? i + 1152 : i + 1152 - 1536;
+    }
+    analogWrite(RED_1, colours[ledColour[0], 0]);
+    analogWrite(GREEN_1, colours[ledColour[0], 1]);
+    analogWrite(BLUE_1, colours[ledColour[0], 2]);
+    analogWrite(RED_2, colours[ledColour[1], 0]);
+    analogWrite(GREEN_2, colours[ledColour[1], 1]);
+    analogWrite(BLUE_2, colours[ledColour[1], 2]);
+    analogWrite(RED_3, colours[ledColour[2], 0]);
+    analogWrite(GREEN_3, colours[ledColour[2], 1]);
+    analogWrite(BLUE_3, colours[ledColour[2], 2]);
+    analogWrite(RED_4, colours[ledColour[3], 0]);
+    analogWrite(GREEN_4, colours[ledColour[3], 1]);
+    analogWrite(BLUE_4, colours[ledColour[3], 2]);
+    delay(10);
 }
