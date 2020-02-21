@@ -108,7 +108,7 @@ void rainbow_one_led(int delayTime) {
 
 void loop() {
     short int ledColour[4];
-    short int step = 10;
+    short int step = 384;
     for (int i = 0; i < 1536; i++) {
         ledColour[0] = i;
         ledColour[1] = (i + step) < 1536 ? i + 384 : i + 384 - 1536;
