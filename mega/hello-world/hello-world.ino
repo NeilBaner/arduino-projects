@@ -8,6 +8,6 @@ void loop(){
     Serial.print("Hello ");
     delay(1000);
     digitalWrite(13, LOW);
-    Serial.println("World! ");
+    Serial.println("World!");
     delay(100);
 }
